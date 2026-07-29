@@ -1,0 +1,19 @@
+generated: '2026-07-19'
+method: searched
+probe: false
+url: https://www.jamasoftware.com/trust/
+certifications:
+  - SOC 2 Type 2
+  - TISAX Level 2
+  - TUV SUD (safety-related development validation)
+  - GDPR
+  - NIST (security policy basis)
+  - OWASP (secure development practices)
+practices:
+  - Daily static and dynamic security scans
+  - Regular third-party penetration testing
+  - AWS EC2 hosting with data protection and tenant isolation
+  - TLS encryption in transit
+evidence:
+  - source: https://www.jamasoftware.com/trust/
+    keywords: [soc 2 type 2, tisax, tuv sud, nist, owasp, penetration testing]

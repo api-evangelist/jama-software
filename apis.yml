@@ -1,8 +1,16 @@
 aid: jama-software
 name: Jama Software
-description: Jama Software is a company surfaced as a portfolio company of insight-partners and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Jama Software is the maker of Jama Connect, a requirements management and
+  live-traceability platform used by teams building complex products, systems,
+  and software in regulated industries such as medical devices, automotive,
+  aerospace and defense, semiconductor, and industrial. Jama Connect exposes a
+  versioned REST API (v1) at https://{instance}.jamacloud.com/rest/v1/ covering
+  items, projects, relationships, item types, baselines, test plans, test cycles,
+  test runs, users, user groups, tags, attachments, and activities. The API
+  supports HTTP Basic authentication and OAuth 2.0 client-credentials, ships
+  official Python, Java, Node.js, and Ruby clients, and is documented through an
+  interactive Swagger reference with a dated changelog and versioning policy.
 url: https://raw.githubusercontent.com/api-evangelist/jama-software/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +18,51 @@ x-backed-by:
 - insight-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://www.jamasoftware.com/wpg/media/sites/2/2026/01/cropped-jama-favicon-192x192.png
 tags:
 - Company
-apis: []
+- Requirements Management
+- Application Lifecycle Management
+- Traceability
+- Test Management
+- Product Development
+- Systems Engineering
+- REST API
+apis:
+- name: Jama Connect REST API
+  description: >-
+    The Jama Connect REST API (v1) provides programmatic access to items,
+    projects, relationships, item types, baselines, test plans, test cycles,
+    test runs, users, user groups, tags, attachments, comments, and activities
+    in a Jama Connect instance. It is served per tenant at
+    https://{instance}.jamacloud.com/rest/v1/ and supports HTTP Basic and
+    OAuth 2.0 client-credentials authentication.
+  humanURL: https://rest.jamasoftware.com/
+  baseURL: https://tenant.jamacloud.com/rest/v1/
+  properties:
+  - type: Documentation
+    url: https://rest.jamasoftware.com/
+  - type: APIReference
+    url: https://rest.jamasoftware.com/
+  - type: GettingStarted
+    url: https://dev.jamasoftware.com/api/
+  - type: Authentication
+    url: authentication/jama-software-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -24,3 +71,60 @@ maintainers:
 common:
 - type: Website
   url: https://www.jamasoftware.com/
+- type: DeveloperPortal
+  url: https://dev.jamasoftware.com/
+- type: Documentation
+  url: https://rest.jamasoftware.com/
+- type: APIReference
+  url: https://rest.jamasoftware.com/
+- type: GettingStarted
+  url: https://dev.jamasoftware.com/api/
+- type: Blog
+  url: https://www.jamasoftware.com/blog/
+- type: Support
+  url: https://help.jamasoftware.com/
+- type: HelpCenter
+  url: https://community.jamasoftware.com/
+- type: Pricing
+  url: https://www.jamasoftware.com/platform/pricing/
+- type: SignUp
+  url: https://www.jamasoftware.com/platform/jama-connect/trial/
+- type: PrivacyPolicy
+  url: https://www.jamasoftware.com/privacy/
+- type: GitHubOrganization
+  url: https://github.com/JamaSoftware
+- type: StatusPage
+  url: https://status.jamasoftware.com
+- type: TrustCenter
+  url: https://www.jamasoftware.com/trust/
+- type: Compliance
+  url: https://www.jamasoftware.com/trust/
+- type: ChangeLog
+  url: changelog/jama-software-changelog.yml
+- type: Authentication
+  url: authentication/jama-software-authentication.yml
+- type: Packages
+  url: packages/jama-software-packages.yml
+- type: SDKs
+  url: packages/jama-software-packages.yml
+- type: LLMsTxt
+  url: llms/jama-software-llms.txt
+- type: Lifecycle
+  url: lifecycle/jama-software-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/jama-software-lifecycle.yml
+- type: Conventions
+  url: conventions/jama-software-conventions.yml
+- type: Conformance
+  url: conformance/jama-software-conformance.yml
+- type: ErrorCatalog
+  url: errors/jama-software-error-codes.yml
+- type: WellKnown
+  url: well-known/jama-software-well-known.yml
+- type: DomainSecurity
+  url: security/jama-software-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

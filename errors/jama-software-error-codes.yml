@@ -1,0 +1,34 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.jamasoftware.com/api/
+format: jama-meta-envelope
+envelope:
+  description: >-
+    Responses carry a top-level meta object; on error meta.status holds the HTTP
+    reason phrase and meta contains a message describing the failure.
+  fields: [meta.status, meta.timestamp]
+problems:
+  - status: 200
+    title: OK
+    meaning: Request succeeded.
+  - status: 201
+    title: Created
+    meaning: Resource created successfully; response includes the new resource id.
+  - status: 400
+    title: Bad Request
+    meaning: Malformed request or invalid parameters/body.
+  - status: 401
+    title: Unauthorized
+    meaning: Missing or invalid credentials / expired OAuth token.
+  - status: 403
+    title: Forbidden
+    meaning: Authenticated user lacks permission (or is not a Creator-license user).
+  - status: 404
+    title: Not Found
+    meaning: The requested resource does not exist or is not visible to the user.
+  - status: 429
+    title: Too Many Requests
+    meaning: API throttling or system maintenance; retry after a delay.
+  - status: 500
+    title: Internal Server Error
+    meaning: Unexpected server-side error.

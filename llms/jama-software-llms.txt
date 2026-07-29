@@ -1,0 +1,68 @@
+# Jama Software
+
+
+> Jama Connect is the only requirements management and traceability software that intelligently improves product requirement quality, auto-detects product development risk, and measurably increases performance across multi-disciplinary teams developing products, systems, and software
+
+
+## Product
+
+
+- [Home Page](https://www.jamasoftware.com/): Jama Connect is the only multi-tenant requirements management software platform
+- [Product Overview](https://www.jamasoftware.com/platform/jama-connect/): Jama Software is the only vendor in the space that offers SOC 2 Type 2 certified application and data center, SLAs above 99%, touchless upgrades, high availability SLA , disaster recovery SLA
+- [Pricing Plans](https://www.jamasoftware.com/platform/pricing/): Understand the different subscription tiers, Or Jama Software offers reviewer licenses, hosting, API usage and file storage at no extra charge.
+- [Key Features](https://www.jamasoftware.com/platform/jama-connect/features/): A detailed look at the primary functionalities and how they help your business[a][b][c][d][e] like, live traceability, real-time collaboration, review center, test and quality management, risk and hazard analysis, reuse and baseline management, requirements authoring, requirements quality 
+- [Integrations](https://www.jamasoftware.com/platform/jama-connect/integrations/): See how Jama Connect connects with other essential business tools 
+- [Jama Connect vs IBM Doors](https://www.jamasoftware.com/solutions/better-than-ibm-doors/): Learn more about how Jama Software compares to IBM Doors
+- [Jama Connect vs Codebeamer](https://www.jamasoftware.com/solutions/why-choose-jama-connect-over-codebeamer/): Companies Choose Jama Connect Over Codebeamer, Jama Connect was designed to complement Jira and Azure DevOps to make agile traceable, Codebeamer overlaps and conflicts with Jira and ADO
+- [Jama Connect vs Polarion](https://www.jamasoftware.com/solutions/choosing-jama-connect-over-polarion/): Jama Connect offers a solution with superior integrations, faster deployment, and unmatched customer satisfaction, making it the top choice for requirements management and traceability
+- [AI-Powered Jama Connect Advisor](https://www.jamasoftware.com/solutions/artificial-intelligence/): Jama Connect Advisor, powered by advanced Artificial Intelligence and Natural Language Processing, brings requirements quality intelligence to your fingertips, transforming the way systems engineers approach requirements management
+- [Start your 30-day free trial](https://www.jamasoftware.com/platform/jama-connect/trial/): Start your 30-day free trial, Invite your entire team Assign roles and permissions, Import your own data Initiate review cycles and collaborate, Experience award-winning ease of use, Use the power of Live Traceability, Measure your traceability score, Use industry-specific solution sets, Leverage Live Trace Explorer
+
+
+## Docs
+
+
+- [User Community](https://community.jamasoftware.com/): Visit the Jama Software User Community official website
+
+
+
+
+## Policies
+
+
+- [Privacy Policy](https://www.jamasoftware.com/privacy/)
+- [Privacy and Security](https://www.jamasoftware.com/trust/)
+
+
+## Support
+
+
+- [User Guide](https://help.jamasoftware.com/): Learn how to use Jama Connect
+- [Success Programs](https://www.jamasoftware.com/solutions/services/): Our Customer Success team stands behind you, delivering the expertise, guidance, and resources you need to see a quick return on your investment and achieve your business goals
+- [Jama Software User Community](https://community.jamasoftware.com/): Explore the User community 
+- [Jama Software Support](https://support.jamasoftware.com/): Official support channel
+- [onboarding](https://community.jamasoftware.com/kb/onboarding-jama-connect)
+
+
+
+
+## Solutions
+
+
+- [traceable Agile](https://www.jamasoftware.com/solutions/traceable-agile/): Traceable Agile speeds the flow of software and hardware development and maintains the current and historical state of development quality to auto-detect issues early
+- [AECO](https://www.jamasoftware.com/solutions/aeco-architecture-engineering-construction-operations/): AEC project owners use Jama Connect for empowered control over specifications for compliant, high-performance facilities and systems, helping to manage costs, adhere to schedules, and ensure quality
+- [Aerospace and Defense](https://www.jamasoftware.com/solutions/airborne-systems/): Jama Connect is the Only Requirements Management Software with a Robust REST API and Live Traceability to Enable DevSecOps
+- [Software-Defined Vehicle Development](https://www.jamasoftware.com/solutions/automotive/): Accelerate software-defined vehicle development cycles, ease compliance, and simplify functional safety with Jama Connect
+- [Oil & Gas Project and Product Development Software](https://www.jamasoftware.com/solutions/oil-gas/): Accelerate time to market, streamline regulatory compliance, and simplify documentation, for oil & gas projects and products with Jama Connect
+- [Financial and Insurance](https://www.jamasoftware.com/solutions/financial-services-and-insurance/): Mitigate risk for financial institutions and streamline insurance product development with a modern requirements management solution
+- [Government Risk Management](https://www.jamasoftware.com/solutions/government/): Adhere to safety-critical regulations, save time, identify risk, and collaborate with Jama's predictive government risk management platform
+- [Industrial Manufacturing Solutions](https://www.jamasoftware.com/solutions/industrial-manufacturing-machinery-consumer-electronics-energy/): Streamline industrial manufacturing with Jama Connect. Enhance quality, reduce rework, and accelerate time-to-market with collaborative, real-time tools
+- [Medical Device](https://www.jamasoftware.com/solutions/medical-device/): Efficient requirements management with risk management allows your product development teams to focus on quality, safe, and secure medical devices and life sciences products
+- [Semiconductor Software](https://www.jamasoftware.com/solutions/semiconductor/): Stop wrestling with MRDs and PRDs and switch to a more comprehensive semiconductor software as your requirements system of record
+- [Engineering leadership](https://www.jamasoftware.com/solutions/engineering-leadership/): With Jama Connect, engineering leaders gain proactive insights across disciplines, reducing defects, rework, and delays without disrupting established workflows
+- [Systems Engineering](https://www.jamasoftware.com/solutions/systems-engineering/): Jama Connect delivers Live Traceability to increase the success rate of Systems Engineering with no changes required to processes or tools across engineering disciplines
+- [Digital Engineering](https://www.jamasoftware.com/solutions/digital-engineering/): Jama Connect delivers Digital Engineering across best-of-breed tools through its unique Traceability Information Model and market-leading integrations
+- [Digital Thread](https://www.jamasoftware.com/solutions/digital-thread/): Jama Connect delivers a Digital Thread that is measurable and live traceable across best-of-breed tools (like Jira and Cameo) to auto-detect risk
+- [Jama Connect Traceable MBSE](https://www.jamasoftware.com/solutions/mbse/): Jama Connect Traceable MBSE helps organizations formalize the development, integration, and use of models
+- [Requirements Management Software](https://www.jamasoftware.com/solutions/requirements-management/): Jama Connect offers top notch requirements management, linking high level systems to subsystem requirements with real-time traceability
+- [Live Requirements Traceability](https://www.jamasoftware.com/solutions/requirements-traceability/): Leverage real-time insights and seamless integrations to enhance productivity, reduce risks, and ensure compliance throughout your product development lifecycle

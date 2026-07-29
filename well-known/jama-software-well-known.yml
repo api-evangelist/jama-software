@@ -1,0 +1,14 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of https://www.jamasoftware.com/.well-known/*
+host: https://www.jamasoftware.com
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/jama-software-llms.txt
+notes: >-
+  The Jama Connect REST API is served per-tenant at https://{instance}.jamacloud.com
+  and has no fixed public host to probe for OIDC/OAuth discovery documents.
+  A verbatim llms.txt is published at the marketing host and captured under llms/.

@@ -1,0 +1,51 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.jamasoftware.com/api/
+scheme: point-version (Jama Connect release)
+current_version: v1
+cadence: quarterly release notes; no more than one full point version per calendar year
+docs: https://dev.jamasoftware.com/api/
+entries:
+  - version: Jama Connect 9.32
+    date: '2026-02-06'
+    channel: labs
+    breaking: false
+    highlights:
+      - New review endpoints to retrieve reviews, comments, revisions, participants, and moderators across projects.
+  - version: Jama Connect 9.21
+    date: '2025-03-28'
+    breaking: false
+    highlights:
+      - Added ability to unapply categories from items via DELETE /item/{id}/categories.
+  - version: Jama Connect 9.12
+    date: '2024-05-30'
+    breaking: false
+    highlights:
+      - Category resource endpoints migrated into v1, including GET/POST for categories and item category management.
+  - version: Jama Connect 9.4
+    date: '2023-09-23'
+    breaking: true
+    highlights:
+      - REST API restricted to Creator-license users.
+      - New endpoints for managing info tips in picklists and item type fields.
+  - version: Jama Connect 9.2
+    date: '2023-08-04'
+    breaking: false
+    highlights:
+      - Performance improvements for relationship queries.
+      - New permission-management endpoints for projects with user-group support.
+  - version: Jama Connect 8.86
+    date: '2023-05-05'
+    breaking: false
+    highlights:
+      - POST baseline endpoint enhanced to allow baseline creation without requiring a source.
+  - version: Jama Connect 8.82
+    date: '2023-01-06'
+    breaking: true
+    highlights:
+      - Parameter naming standardized; versionID changed to versionNumber in item endpoint.
+  - version: Jama Connect 8.80
+    date: '2022-11-11'
+    breaking: false
+    highlights:
+      - Baseline items now include category snapshots applied at baseline creation time.

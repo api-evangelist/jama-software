@@ -1,0 +1,21 @@
+{
+  "repo": "jama-software",
+  "feeds": [
+    {
+      "source": "https://dev.jamasoftware.com/feed/",
+      "feed_url": "https://dev.jamasoftware.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://dev.jamasoftware.com/api/",
+      "feed_url": "https://dev.jamasoftware.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 1,
+  "fetched": "2026-07-25T15:00:33Z"
+}

@@ -1,0 +1,35 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.jamasoftware.com/api/
+authentication:
+  styles: [http-basic, oauth2-client-credentials]
+  ref: authentication/jama-software-authentication.yml
+base_url:
+  pattern: https://{instance}.jamacloud.com/rest/{version}/
+  versions: [v1, latest, labs]
+pagination:
+  style: offset
+  params:
+    start: startAt
+    limit: maxResults
+  default_page_size: 20
+  max_page_size: 50
+  response_fields:
+    meta.pageInfo.startIndex: index of the first returned result
+    meta.pageInfo.resultCount: number of results in this page
+    meta.pageInfo.totalResults: total number of results available
+error_envelope:
+  shape: >-
+    Every response carries a top-level meta object with status and timestamp;
+    errors also populate meta.status (HTTP reason) and a message describing the
+    problem. The payload sits under a data or linked object.
+  ref: errors/jama-software-error-codes.yml
+rate_limiting:
+  signal: HTTP 429 Too Many Requests on throttling or maintenance.
+  headers: not documented
+versioning:
+  style: uri-path
+  ref: lifecycle/jama-software-lifecycle.yml
+idempotency:
+  supported: false
+  note: Jama Connect does not document an idempotency-key mechanism for the REST API.

@@ -1,0 +1,30 @@
+generated: '2026-07-19'
+method: searched
+source: https://dev.jamasoftware.com/api/
+versioning:
+  scheme: uri-path
+  current: v1
+  channels:
+    - id: v0
+      status: removed
+      note: Pre-beta version, removed in Jama Connect 8.22.
+    - id: v1
+      status: current
+      note: Current supported version of the REST API.
+    - id: latest
+      status: deprecated
+      note: Designated for sunset; points at the newest supported version.
+    - id: labs
+      status: experimental
+      note: Introduces new endpoints for feedback without breaking supported versions.
+  release_cadence: Jama will not release more than one full point version per calendar year.
+deprecation:
+  policy_url: https://dev.jamasoftware.com/api/
+  policy: >-
+    On-premise clients receive a sunset window never smaller than one Standard
+    release for migration planning; the "latest" channel is designated for sunset.
+sla:
+  uptime_target: "99%+"
+  note: Jama Software publishes SLAs above 99% with high-availability and disaster-recovery SLAs.
+  source: https://www.jamasoftware.com/platform/jama-connect/
+status_page: https://status.jamasoftware.com
