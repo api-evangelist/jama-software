@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/jama-software/main/json-schema/jama-software-get-rest-v1-items-itemid-response-schema.json",
+  "title": "GetRestV1ItemsItemidResponse",
+  "x-generated": "2026-10-20",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetRestV1ItemsItemidResponse",
+  "type": "object",
+  "properties": {
+    " 24114 ": {
+      "type": "object",
+      "properties": {
+        " id ": {
+          "type": "integer"
+        },
+        " projectKey ": {
+          "type": "string"
+        },
+        " isFolder ": {
+          "type": "boolean"
+        },
+        " createdDate ": {
+          "type": "string",
+          "format": "date-time"
+        },
+        " modifiedDate ": {
+          "type": "string",
+          "format": "date-time"
+        },
+        " createdBy ": {
+          "type": "integer"
+        },
+        " modifiedBy ": {
+          "type": "integer"
+        },
+        " fields ": {
+          "type": "object",
+          "properties": {
+            " projectManager ": {
+              "type": "integer"
+            },
+            " user1 ": {
+              "type": "integer"
+            },
+            " projectKey ": {
+              "type": "string"
+            },
+            " statusId ": {
+              "type": "integer"
+            },
+            " text1 ": {
+              "type": "string"
+            },
+            " name ": {
+              "type": "string"
+            },
+            " description ": {
+              "type": "string"
+            },
+            " projectGroup ": {
+              "type": "integer"
+            }
+          }
+        },
+        " type ": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

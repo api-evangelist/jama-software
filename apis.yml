@@ -1,23 +1,27 @@
 aid: jama-software
+
 name: Jama Software
-description: >-
-  Jama Software is the maker of Jama Connect, a requirements management and
-  live-traceability platform used by teams building complex products, systems,
-  and software in regulated industries such as medical devices, automotive,
-  aerospace and defense, semiconductor, and industrial. Jama Connect exposes a
-  versioned REST API (v1) at https://{instance}.jamacloud.com/rest/v1/ covering
-  items, projects, relationships, item types, baselines, test plans, test cycles,
-  test runs, users, user groups, tags, attachments, and activities. The API
-  supports HTTP Basic authentication and OAuth 2.0 client-credentials, ships
-  official Python, Java, Node.js, and Ruby clients, and is documented through an
-  interactive Swagger reference with a dated changelog and versioning policy.
+
+description: Jama Software is the maker of Jama Connect, a requirements management and live-traceability platform used by teams building complex
+  products, systems, and software in regulated industries such as medical devices, automotive, aerospace and defense, semiconductor, and industrial.
+  Jama Connect exposes a versioned REST API (v1) at https://{instance}.jamacloud.com/rest/v1/ covering items, projects, relationships, item types,
+  baselines, test plans, test cycles, test runs, users, user groups, tags, attachments, and activities. The API supports HTTP Basic authentication
+  and OAuth 2.0 client-credentials, ships official Python, Java, Node.js, and Ruby clients, and is documented through an interactive Swagger reference
+  with a dated changelog and versioning policy.
+
 url: https://raw.githubusercontent.com/api-evangelist/jama-software/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - insight-partners
-x-tier: stub
-x-tier-reason: portfolio-lead
+
+x-tier: profiled
+
+x-tier-reason: enrichment pass 2026-10-20 (local-v5; was portfolio-lead)
+
 deliveryModel:
   model: saas
   open_source: false
@@ -29,6 +33,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -41,10 +46,15 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-07-19'
+
 image: https://www.jamasoftware.com/wpg/media/sites/2/2026/01/cropped-jama-favicon-192x192.png
+
 tags:
 - Company
 - Requirements Management
@@ -54,32 +64,36 @@ tags:
 - Product Development
 - Systems Engineering
 - REST API
-apis:
-- name: Jama Connect REST API
-  description: >-
-    The Jama Connect REST API (v1) provides programmatic access to items,
-    projects, relationships, item types, baselines, test plans, test cycles,
-    test runs, users, user groups, tags, attachments, comments, and activities
-    in a Jama Connect instance. It is served per tenant at
-    https://{instance}.jamacloud.com/rest/v1/ and supports HTTP Basic and
-    OAuth 2.0 client-credentials authentication.
-  humanURL: https://rest.jamasoftware.com/
-  baseURL: https://tenant.jamacloud.com/rest/v1/
-  properties:
-  - type: Documentation
-    url: https://rest.jamasoftware.com/
-  - type: APIReference
-    url: https://rest.jamasoftware.com/
-  - type: GettingStarted
-    url: https://dev.jamasoftware.com/api/
-  - type: Authentication
-    url: authentication/jama-software-authentication.yml
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Newsroom
+  url: https://www.jamasoftware.com/media/2024/09/ice-tim-diagram.jpg
+- type: Spectral
+  url: rules/jama-software-rules.yml
+- type: JSONLD
+  url: json-ld/jama-software-context.jsonld
+- type: Vocabulary
+  url: vocabulary/jama-software-vocabulary.yml
+- type: DataModel
+  url: data-model/jama-software-data-model.yml
+- type: TrustCenter
+  url: security/jama-software-trust-center.yml
+- type: Hosts
+  url: hosts/jama-software-hosts.yml
+- type: IntegrationEdges
+  url: integrations/jama-software-integration-edges.yml
+- type: Vendors
+  url: vendors/jama-software-vendors.yml
+- type: Leadership
+  url: https://www.jamasoftware.com/company/leadership/
 - type: Website
   url: https://www.jamasoftware.com/
 - type: DeveloperPortal
@@ -134,8 +148,54 @@ common:
   url: well-known/jama-software-well-known.yml
 - type: DomainSecurity
   url: security/jama-software-domain-security.yml
+
+apis:
+- name: Jama Connect REST API
+  description: The Jama Connect REST API (v1) provides programmatic access to items, projects, relationships, item types, baselines, test plans,
+    test cycles, test runs, users, user groups, tags, attachments, comments, and activities in a Jama Connect instance. It is served per tenant
+    at https://{instance}.jamacloud.com/rest/v1/ and supports HTTP Basic and OAuth 2.0 client-credentials authentication.
+  humanURL: https://rest.jamasoftware.com/
+  baseURL: https://{tenant}.jamacloud.com/rest/v1
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/jama-software-openapi-generated.yml
+    x-provenance: generated
+  - type: Documentation
+    url: https://rest.jamasoftware.com/
+  - type: APIReference
+    url: https://rest.jamasoftware.com/
+  - type: GettingStarted
+    url: https://dev.jamasoftware.com/api/
+  - type: Authentication
+    url: authentication/jama-software-authentication.yml
+  - type: JSONSchema
+    url: json-schema/jama-software-get-rest-v1-items-itemid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/jama-software-patch-rest-v1-testruns-testrunid-request-schema.json
+  - type: JSONSchema
+    url: json-schema/jama-software-put-jama-rest-v1-items-itemid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/jama-software-post-testplans-request-schema.json
+  - type: JSONSchema
+    url: json-schema/jama-software-post-rest-v1-comments-request-schema.json
+  - type: JSONSchema
+    url: json-schema/jama-software-get-testplans-testplanid-testgroups-response-schema.json
+  aid: jama-software:jama-connect-rest-api
+
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  method: derived
+  generated: '2026-10-20'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes developer documentation but serves no machine-readable contract from it
+  evidence:
+  - url: https://www.jamasoftware.com/
+    status: 200
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
-  pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 14
+  pass: local-v5

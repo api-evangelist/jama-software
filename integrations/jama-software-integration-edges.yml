@@ -1,4 +1,21 @@
-generated: '2026-10-15'
+generated: '2026-10-20'
+method: searched
+source:
+- https://zapier.com/api/v4/apps/
+- https://zapier.com/apps/jama-software/integrations
+- https://n8n.io/integrations/jama-software/
+- https://composio.dev/toolkits/jama-software
+- https://monid.ai/tools/jama-software
+checked:
+- https://fivetran.com/docs-sitemap.xml
+- https://fivetran.com/docs/connectors/partner-built-program
+- https://zapier.com/api/v4/apps/
+- https://composio.dev/toolkits/jama-software
+- https://monid.ai/tools/jama-software
+- https://n8n.io/integrations/jama-software/
+- https://zapier.com/apps/jama-software/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: Zapier
   partner: zapier
@@ -51,10 +68,4 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
-method: searched
-checked:
-- https://fivetran.com/docs-sitemap.xml
-- https://fivetran.com/docs/connectors/partner-built-program
-- https://zapier.com/api/v4/apps/
-source:
-- https://zapier.com/api/v4/apps/
+templates: []

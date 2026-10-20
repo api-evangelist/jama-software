@@ -1,0 +1,8 @@
+name: Jama Software agent skills
+generated: '2026-10-20'
+method: generated
+skills:
+- name: trace-requirements
+  file: skills/jama-software-trace-requirements.md
+- name: manage-items
+  file: skills/jama-software-manage-items.md

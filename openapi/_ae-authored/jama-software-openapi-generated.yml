@@ -1,0 +1,3786 @@
+openapi: 3.1.0
+info:
+  title: Jama Software API
+  version: '2026-10-20'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-20: 128 operation(s) read from 3 public documentation page(s) (each
+    operation names its page in x-source). This is not the provider''s published contract; Jama Software has published no machine-readable contract
+    that the pipeline could find. Engine: anthropic.'
+  x-evidence-tiers:
+    code-example: 6
+    documentation: 122
+    pages-with-code: 2
+    pages-read: 3
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-20'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://dev.jamasoftware.com/api
+  - https://dev.jamasoftware.com/cookbook
+  - https://rest.jamasoftware.com
+servers:
+- url: https://{tenant}.jamacloud.com/rest/v1
+  description: Jama Connect cloud instance (docs examples use https://xyz.jamacloud.com/rest and http://basepath/rest/v1/); self-hosted installs use their own context path
+  variables:
+    tenant:
+      default: xyz
+paths:
+  /abstractitems:
+    get:
+      operationId: get_abstractitems
+      tags:
+      - Abstractitems
+      summary: Search for items using abstract items endpoint with dynamic filtering.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: lastActivityDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: contains
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsResponse'
+      x-evidence:
+        kind: documentation
+  /abstractitems/{id}:
+    get:
+      operationId: get_abstractitems_id
+      tags:
+      - Abstractitems
+      summary: Get any item, test plan, test cycle, test run, or attachment with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsIdResponse'
+      x-evidence:
+        kind: documentation
+  /abstractitems/{id}/versionedrelationships:
+    get:
+      operationId: get_abstractitems_id_versionedrelationships
+      tags:
+      - Abstractitems
+      summary: Get all versioned relationships that were associated to the item at the specified time
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: timestamp
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsIdVersionedrelationshipsResponse'
+      x-evidence:
+        kind: documentation
+  /abstractitems/{id}/versions:
+    get:
+      operationId: get_abstractitems_id_versions
+      tags:
+      - Abstractitems
+      summary: Get all versions for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsIdVersionsResponse'
+      x-evidence:
+        kind: documentation
+  /abstractitems/{id}/versions/{versionnum}:
+    get:
+      operationId: get_abstractitems_id_versions_versionnum
+      tags:
+      - Abstractitems
+      summary: Get the numbered version for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsIdVersionsVersionnumResponse'
+      x-evidence:
+        kind: documentation
+  /abstractitems/{id}/versions/{versionnum}/versioneditem:
+    get:
+      operationId: get_abstractitems_id_versions_versionnum_versioneditem
+      tags:
+      - Abstractitems
+      summary: Get the snapshot of the item at the specified version
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAbstractitemsIdVersionsVersionnumVersioneditemResponse'
+      x-evidence:
+        kind: documentation
+  /activities:
+    get:
+      operationId: get_activities
+      tags:
+      - Activities
+      summary: Get all activities in the project with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: project
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: eventType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: objectType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: itemType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: date
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: deleteEvents
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActivitiesResponse'
+      x-evidence:
+        kind: documentation
+  /activities/{activityid}:
+    get:
+      operationId: get_activities_activityid
+      tags:
+      - Activities
+      summary: Get the activity with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: activityid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActivitiesActivityidResponse'
+      x-evidence:
+        kind: documentation
+  /activities/{activityid}/affecteditems:
+    get:
+      operationId: get_activities_activityid_affecteditems
+      tags:
+      - Activities
+      summary: Get all items affected by the activity with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: activityid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetActivitiesActivityidAffecteditemsResponse'
+      x-evidence:
+        kind: documentation
+  /activities/{activityid}/restore:
+    post:
+      operationId: post_activities_activityid_restore
+      tags:
+      - Activities
+      summary: Restore item(s) associated with a delete activity.
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: activityid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostActivitiesActivityidRestoreResponse'
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/comments:
+    get:
+      operationId: get_attachments_attachmentid_comments
+      tags:
+      - Attachments
+      summary: Get all comments for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: rootCommentsOnly
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAttachmentsAttachmentidCommentsResponse'
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/file:
+    get:
+      operationId: get_attachments_attachmentid_file
+      tags:
+      - Attachments
+      summary: Download attachment file from the attachment with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/lock:
+    get:
+      operationId: get_attachments_attachmentid_lock
+      tags:
+      - Attachments
+      summary: Get the locked state, last locked date, and last locked by user for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAttachmentsAttachmentidLockResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_attachments_attachmentid_lock
+      tags:
+      - Attachments
+      summary: Update the locked state of the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutAttachmentsAttachmentidLockRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutAttachmentsAttachmentidLockResponse'
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/versions:
+    get:
+      operationId: get_attachments_attachmentid_versions
+      tags:
+      - Attachments
+      summary: Get all versions for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAttachmentsAttachmentidVersionsResponse'
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/versions/{versionnum}:
+    get:
+      operationId: get_attachments_attachmentid_versions_versionnum
+      tags:
+      - Attachments
+      summary: Get the numbered version for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAttachmentsAttachmentidVersionsVersionnumResponse'
+      x-evidence:
+        kind: documentation
+  /attachments/{attachmentid}/versions/{versionnum}/versioneditem:
+    get:
+      operationId: get_attachments_attachmentid_versions_versionnum_versioneditem
+      tags:
+      - Attachments
+      summary: Get the snapshot of the attachment at the specified version
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAttachmentsAttachmentidVersionsVersionnumVersioneditemRes'
+      x-evidence:
+        kind: documentation
+  /baselines:
+    get:
+      operationId: get_baselines
+      tags:
+      - Baselines
+      summary: Get all baselines in the project with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: project
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: createdBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: source
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesResponse'
+      x-evidence:
+        kind: documentation
+  /baselines/{baselineid}:
+    delete:
+      operationId: delete_baselines_baselineid
+      tags:
+      - Baselines
+      summary: Delete the baseline with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_baselines_baselineid
+      tags:
+      - Baselines
+      summary: Get the baseline with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesBaselineidResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_baselines_baselineid
+      tags:
+      - Baselines
+      summary: Update the baseline with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutBaselinesBaselineidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /baselines/{baselineid}/reviewlink:
+    get:
+      operationId: get_baselines_baselineid_reviewlink
+      tags:
+      - Baselines
+      summary: Get review link for the baseline with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /baselines/{baselineid}/versioneditems:
+    get:
+      operationId: get_baselines_baselineid_versioneditems
+      tags:
+      - Baselines
+      summary: Get all versioned items for the baseline with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /baselines/{baselineid}/versioneditems/{itemid}:
+    get:
+      operationId: get_baselines_baselineid_versioneditems_itemid
+      tags:
+      - Baselines
+      summary: Get the versioned item with the specified item ID for the baseline with the specified baseline ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: itemid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /baselines/{baselineid}/versioneditems/{itemid}/versionedrelationships:
+    get:
+      operationId: get_baselines_baselineid_versioneditems_itemid_versionedrelationships
+      tags:
+      - Baselines
+      summary: Get all versioned relationships for the item in the baseline
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: baselineid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: itemid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBaselinesBaselineidVersioneditemsItemidVersionedrelations'
+      x-evidence:
+        kind: documentation
+  /categories:
+    get:
+      operationId: get_categories
+      tags:
+      - Categories
+      summary: Get all categories.
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_categories
+      tags:
+      - Categories
+      summary: Create a new category.
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /categories/{categorypathid}/visibility:
+    put:
+      operationId: put_categories_categorypathid_visibility
+      tags:
+      - Categories
+      summary: Update category visibility.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: categorypathid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /comments:
+    get:
+      operationId: get_comments
+      tags:
+      - Comments
+      summary: Get all comments viewable by the current user
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: rootCommentsOnly
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_comments
+      tags:
+      - Comments
+      summary: Create a new comment
+      x-source: https://rest.jamasoftware.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostCommentsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /comments/{id}:
+    get:
+      operationId: get_comments_id
+      tags:
+      - Comments
+      summary: Get the comment with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /comments/{id}/replies:
+    get:
+      operationId: get_comments_id_replies
+      tags:
+      - Comments
+      summary: Get all reply comments for the comment with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /files:
+    get:
+      operationId: get_files
+      tags:
+      - Files
+      summary: Download attachment file from the attachment with the specified Jama URL
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: url
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /filters:
+    get:
+      operationId: get_filters
+      tags:
+      - Filters
+      summary: Get all filters viewable by the current user
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: project
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: author
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: filterScope
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: accessSpecifier
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFiltersResponse'
+      x-evidence:
+        kind: documentation
+  /filters/{filterid}:
+    get:
+      operationId: get_filters_filterid
+      tags:
+      - Filters
+      summary: Get the filter with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: filterid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFiltersFilteridResponse'
+      x-evidence:
+        kind: documentation
+  /filters/{filterid}/count:
+    get:
+      operationId: get_filters_filterid_count
+      tags:
+      - Filters
+      summary: Get the count for the filter with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: filterid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFiltersFilteridCountResponse'
+      x-evidence:
+        kind: documentation
+  /filters/{filterid}/results:
+    get:
+      operationId: get_filters_filterid_results
+      tags:
+      - Filters
+      summary: Get all results for the filter with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: filterid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFiltersFilteridResultsResponse'
+      x-evidence:
+        kind: documentation
+  /item/{id}:
+    put:
+      operationId: put_item_id
+      tags:
+      - Item
+      summary: Update a Jama item's rich text field with clickable attachment links.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemIdRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutItemIdResponse'
+      x-evidence:
+        kind: documentation
+  /items:
+    get:
+      operationId: get_items
+      tags:
+      - Items
+      summary: Search for items
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: project
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: itemType
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: documentKey
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: release
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: createdDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: modifiedDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: lastActivityDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: contains
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: includeWildcard
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_items
+      tags:
+      - Items
+      summary: Update items in bulk
+      x-source: https://rest.jamasoftware.com
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_items
+      tags:
+      - Items
+      summary: Create a new item
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: setGlobalIdManually
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostItemsResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}:
+    delete:
+      operationId: delete_items_id
+      tags:
+      - Items
+      summary: Delete the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    patch:
+      operationId: patch_items_id
+      tags:
+      - Items
+      summary: Update the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_items_id
+      tags:
+      - Items
+      summary: Update the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/activities:
+    get:
+      operationId: get_items_id_activities
+      tags:
+      - Items
+      summary: Get all activities for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/attachments:
+    get:
+      operationId: get_items_id_attachments
+      tags:
+      - Items
+      summary: Get all attachments for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/attachments/{attachmentid}:
+    delete:
+      operationId: delete_items_id_attachments_attachmentid
+      tags:
+      - Items
+      summary: Remove an attachment from the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/baselinedcategories:
+    get:
+      operationId: get_items_id_baselinedcategories
+      tags:
+      - Items
+      summary: Get all baselined categories for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/categories:
+    delete:
+      operationId: delete_items_id_categories
+      tags:
+      - Items
+      summary: Remove categories from the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/children:
+    get:
+      operationId: get_items_id_children
+      tags:
+      - Items
+      summary: Get all child items for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/comments:
+    get:
+      operationId: get_items_id_comments
+      tags:
+      - Items
+      summary: Get all comments for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/downstreamrelated:
+    get:
+      operationId: get_items_id_downstreamrelated
+      tags:
+      - Items
+      summary: Get all downstream related items for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/downstreamrelationships:
+    get:
+      operationId: get_items_id_downstreamrelationships
+      tags:
+      - Items
+      summary: Get all downstream relationships for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/duplicate:
+    post:
+      operationId: post_items_id_duplicate
+      tags:
+      - Items
+      summary: Duplicate the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/links:
+    get:
+      operationId: get_items_id_links
+      tags:
+      - Items
+      summary: Get all links for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_items_id_links
+      tags:
+      - Items
+      summary: Create a new link for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostItemsIdLinksResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/links/{linkid}:
+    delete:
+      operationId: delete_items_id_links_linkid
+      tags:
+      - Items
+      summary: Delete a link for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_items_id_links_linkid
+      tags:
+      - Items
+      summary: Get the link with the specified ID for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_items_id_links_linkid
+      tags:
+      - Items
+      summary: Update the link for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: linkid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemsIdLinksLinkidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutItemsIdLinksLinkidResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/location:
+    get:
+      operationId: get_items_id_location
+      tags:
+      - Items
+      summary: Get the location information for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_items_id_location
+      tags:
+      - Items
+      summary: Move an item to a new location (can be used for moving items between projects)
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemsIdLocationRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutItemsIdLocationResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/lock:
+    get:
+      operationId: get_items_id_lock
+      tags:
+      - Items
+      summary: Get the locked state, last locked date, and last locked by user for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_items_id_lock
+      tags:
+      - Items
+      summary: Update the locked state of the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutItemsIdLockRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutItemsIdLockResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/parent:
+    get:
+      operationId: get_items_id_parent
+      tags:
+      - Items
+      summary: Get the parent item for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/synceditems:
+    get:
+      operationId: get_items_id_synceditems
+      tags:
+      - Items
+      summary: Get all synced items for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_items_id_synceditems
+      tags:
+      - Items
+      summary: Create a new synced item for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostItemsIdSynceditemsResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/synceditems/{synceditemid}:
+    delete:
+      operationId: delete_items_id_synceditems_synceditemid
+      tags:
+      - Items
+      summary: Delete synced item relationship for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: synceditemid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/synceditems/{synceditemid}/syncstatus:
+    get:
+      operationId: get_items_id_synceditems_synceditemid_syncstatus
+      tags:
+      - Items
+      summary: Get sync status for the synced item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: synceditemid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/tags:
+    get:
+      operationId: get_items_id_tags
+      tags:
+      - Items
+      summary: Get all tags for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_items_id_tags
+      tags:
+      - Items
+      summary: Create or add a tag to the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostItemsIdTagsResponse'
+      x-evidence:
+        kind: documentation
+  /items/{id}/tags/{tagid}:
+    delete:
+      operationId: delete_items_id_tags_tagid
+      tags:
+      - Items
+      summary: Remove a tag from the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tagid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_items_id_tags_tagid
+      tags:
+      - Items
+      summary: Get the tag with the specified ID for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: tagid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/upstreamrelated:
+    get:
+      operationId: get_items_id_upstreamrelated
+      tags:
+      - Items
+      summary: Get all upstream related items for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/upstreamrelationships:
+    get:
+      operationId: get_items_id_upstreamrelationships
+      tags:
+      - Items
+      summary: Get all upstream relationships for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/versionedcategories:
+    get:
+      operationId: get_items_id_versionedcategories
+      tags:
+      - Items
+      summary: Get all categories for the item at the specified version
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/versions:
+    get:
+      operationId: get_items_id_versions
+      tags:
+      - Items
+      summary: Get all versions for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: startAt
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        required: false
+        schema:
+          type: string
+        description: If not set, this defaults to 20. This cannot be larger than 50
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Links to include as full objects in the linked map
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/versions/{versionnum}:
+    get:
+      operationId: get_items_id_versions_versionnum
+      tags:
+      - Items
+      summary: Get the numbered version for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Links to include as full objects in the linked map
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/versions/{versionnum}/versioneditem:
+    get:
+      operationId: get_items_id_versions_versionnum_versioneditem
+      tags:
+      - Items
+      summary: Get the snapshot of the item at the specified version
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionnum
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: xJamaDateFieldsWithTime
+        in: header
+        required: false
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Links to include as full objects in the linked map
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/workflowtransitionoptions:
+    get:
+      operationId: get_items_id_workflowtransitionoptions
+      tags:
+      - Items
+      summary: Get available workflow transition options for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /items/{id}/workflowtransitions:
+    post:
+      operationId: post_items_id_workflowtransitions
+      tags:
+      - Items
+      summary: Create a new workflow transition for the item with the specified ID
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /itemtypes:
+    get:
+      operationId: get_itemtypes
+      tags:
+      - Itemtypes
+      summary: Get all item types
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetItemtypesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_itemtypes
+      tags:
+      - Itemtypes
+      summary: Create a new item type
+      x-source: https://rest.jamasoftware.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostItemtypesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostItemtypesResponse'
+      x-evidence:
+        kind: documentation
+  /itemtypes/{itemtypeid}:
+    get:
+      operationId: get_itemtypes_itemtypeid
+      tags:
+      - Itemtypes
+      summary: Get item type by ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: itemtypeid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /itemtypes/{itemtypeid}/fields:
+    post:
+      operationId: post_itemtypes_itemtypeid_fields
+      tags:
+      - Itemtypes
+      summary: Create info tips for field labels in picklists.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: itemtypeid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /jama/rest/v1/items/{itemid}:
+    put:
+      operationId: put_jama_rest_v1_items_itemid
+      tags:
+      - Jama
+      summary: PUT /jama/rest/v1/items/{itemId}
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: itemid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutJamaRestV1ItemsItemidResponse'
+      x-evidence:
+        kind: code-example
+        language: http
+        snippet: " PUT /jama/rest/v1/items/23 HTTP/1.1 \nHost: localhost:8080 \nAuthorization: Basic c2FtcGxlOnBhc3N3b3Jk \nContent-Type: application/json\
+          \ \nCache-Control: no-cache \n Sample Response \n Jama is extremely configurable by business users. At any time, an Organization Admin\
+          \ may choose to create, modify or remove an item type, which if you are not familiar, you can think of as an artifact. This means that\
+          \ Jam"
+  /picklistoptions/{picklistoptionid}:
+    get:
+      operationId: get_picklistoptions_picklistoptionid
+      tags:
+      - Picklistoptions
+      summary: Get picklist option by ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: picklistoptionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_picklistoptions_picklistoptionid
+      tags:
+      - Picklistoptions
+      summary: Update picklist option by ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: picklistoptionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /picklists:
+    post:
+      operationId: post_picklists
+      tags:
+      - Picklists
+      summary: Create a new pick list
+      x-source: https://rest.jamasoftware.com
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPicklistsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPicklistsResponse'
+      x-evidence:
+        kind: documentation
+  /picklists/{picklistid}:
+    delete:
+      operationId: delete_picklists_picklistid
+      tags:
+      - Picklists
+      summary: Delete the pick list
+      x-source: https://rest.jamasoftware.com
+      parameters:
+      - name: picklistid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /picklists/{picklistid}/options:
+    post:
+      operationId: post_picklists_picklistid_options
+      tags:
+      - Picklists
+      summary: Create a new picklist option.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: picklistid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /projects/{projectid}/attachments:
+    post:
+      operationId: post_projects_projectid_attachments
+      tags:
+      - Projects
+      summary: Create an attachment item as a container for attachment metadata.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: projectid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostProjectsProjectidAttachmentsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostProjectsProjectidAttachmentsResponse'
+      x-evidence:
+        kind: documentation
+  /projects/{projectid}/permissions:
+    delete:
+      operationId: delete_projects_projectid_permissions
+      tags:
+      - Projects
+      summary: Remove the existing permission entry for a specified [user or user group] to a specified [project or folder of projects].
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: projectid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_projects_projectid_permissions
+      tags:
+      - Projects
+      summary: Read the permission entries for a specified [user or user group] for a specified [project or folder of projects].
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: projectid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_projects_projectid_permissions
+      tags:
+      - Projects
+      summary: Create or override permission entry for a specified [user or user group] to a specified [project or folder of projects].
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: projectid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_projects_projectid_permissions
+      tags:
+      - Projects
+      summary: Update existing permission entry for a specified [user or user group] to a specified [project or folder of projects].
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: projectid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /relationships:
+    get:
+      operationId: get_relationships
+      tags:
+      - Relationships
+      summary: Get all relationships.
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /rest/oauth/token:
+    post:
+      operationId: post_rest_oauth_token
+      tags:
+      - Rest
+      summary: POST /rest/oauth/token
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request POST http://test123:EC231BA29695BF2CBAB6@basepath/rest/oauth/token  --data grant_type=client_credentials \\ {\
+          \ \n\" access_token \": \"eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0NDQ5MjI4OTcsInNjb3BlIjpbInJlYWQiXSwianRpIjoiNTQ3N2... (et cetera)\" , \n\"\
+          \ token_type \": \"bearer\" , \n\" expires_in \": 3599 , \n\" scope \": \"token_information\" , \n\" application_data \": { \n\" JAMA_CORE\
+          \ \": \"sample\" \n} , \n\" tenant \": "
+  /rest/v:
+    get:
+      operationId: get_rest_v
+      tags:
+      - Rest
+      summary: GET /rest/v
+      x-source: https://dev.jamasoftware.com/cookbook
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET 'https://{baseUrl}/rest/v 1 /abstractitems?project= 15 &project= 20 ' \n Remember that when the parameter is repeated,\
+          \ you are grouping the values together with OR expressions. You will get broader results as you add more parameters of the same type.\
+          \ \n Matching Date Time Fields \nValid for: createdDate, modifiedDate, lastActivityDate \n The date base parameters operate a little\
+          \ differentl"
+  /rest/v1/attachment/{attachmentid}/file:
+    get:
+      operationId: get_rest_v1_attachment_attachmentid_file
+      tags:
+      - Rest
+      summary: Download the attached file
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_rest_v1_attachment_attachmentid_file
+      tags:
+      - Rest
+      summary: Upload file to attachment.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutRestV1AttachmentAttachmentidFileResponse'
+      x-evidence:
+        kind: documentation
+  /rest/v1/attachments/{attachmentid}/comments:
+    get:
+      operationId: get_rest_v1_attachments_attachmentid_comments
+      tags:
+      - Rest
+      summary: Gets all comments for attachment Item
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /rest/v1/comments:
+    post:
+      operationId: post_rest_v1_comments
+      tags:
+      - Rest
+      summary: Create a comment on a project or item.
+      x-source: https://dev.jamasoftware.com/cookbook
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRestV1CommentsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostRestV1CommentsResponse'
+      x-evidence:
+        kind: documentation
+  /rest/v1/item/{id}/attachments/{attachmentid}:
+    delete:
+      operationId: delete_rest_v1_item_id_attachments_attachmentid
+      tags:
+      - Rest
+      summary: Removes the association from the item
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /rest/v1/items/{id}/attachments:
+    get:
+      operationId: get_rest_v1_items_id_attachments
+      tags:
+      - Rest
+      summary: Gets attachments on an Item
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_rest_v1_items_id_attachments
+      tags:
+      - Rest
+      summary: Associates attachment item to the item
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /rest/v1/items/{id}/location:
+    put:
+      operationId: put_rest_v1_items_id_location
+      tags:
+      - Rest
+      summary: Move an item by setting its parent location in the project tree.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutRestV1ItemsIdLocationRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutRestV1ItemsIdLocationResponse'
+      x-evidence:
+        kind: documentation
+  /rest/v1/items/{itemid}:
+    get:
+      operationId: get_rest_v1_items_itemid
+      tags:
+      - Rest
+      summary: GET /rest/v1/items/{itemId}
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: itemid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: include
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRestV1ItemsItemidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X GET --header \"Accept: application/json\" \n \"https://www.jamaland.com/rest/v1/items/2737149?include=data.fields.priority&include=data.project\"\
+          \ \n The response includes a new linked section: \n \"linked\" : { \n\" projects \": { \n\" 24114 \": { \n\" id \": 24114 , \n\" projectKey\
+          \ \": \"API\" , \n\" isFolder \": false , \n\" createdDate \": \"2014-06-05T11:12:01.000+0000\" , \n\" modifiedDate \": \"2016-01-19T19:28:57.000"
+  /rest/v1/testruns/{testrunid}:
+    patch:
+      operationId: patch_rest_v1_testruns_testrunid
+      tags:
+      - Rest
+      summary: Update the status of a Test Run using PATCH operations.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testrunid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchRestV1TestrunsTestrunidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchRestV1TestrunsTestrunidResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_rest_v1_testruns_testrunid
+      tags:
+      - Rest
+      summary: Update the status of a test run.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testrunid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutRestV1TestrunsTestrunidRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutRestV1TestrunsTestrunidResponse'
+      x-evidence:
+        kind: documentation
+  /rest/v1/users/current:
+    get:
+      operationId: get_rest_v1_users_current
+      tags:
+      - Rest
+      summary: GET /rest/v1/users/current
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --request GET http://basepath/rest/v1/users/current \n --header \"Authorization : Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0NDQ5MjI4OTcsInNjb3BlIjpbInJlYWQiXSwianRpIjoiNTQ3N2...\
+          \ (et cetera)\" { \n\" meta \": { \n\" status \": \"OK\" , \n\" timestamp \": \"2015-10-28T22:33:16.524+0000\" \n} , \n\" links \":\
+          \ {} , \n\" data \": { \n\" id \": 5 , \n\" username \": \"sample\" , \n\" firstName \": \"Sample\" , \n\" lastName \": \"User\" , \n"
+  /rest/v1/{attachmentid}:
+    get:
+      operationId: get_rest_v1_attachmentid
+      tags:
+      - Rest
+      summary: Get attachment metadata.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: attachmentid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRestV1AttachmentidResponse'
+      x-evidence:
+        kind: documentation
+  /reviewmoderators:
+    get:
+      operationId: get_reviewmoderators
+      tags:
+      - Reviewmoderators
+      summary: Get all moderators for reviews.
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews:
+    get:
+      operationId: get_reviews
+      tags:
+      - Reviews
+      summary: Get all reviews in the project with the specified ID.
+      x-source: https://dev.jamasoftware.com/api
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}:
+    get:
+      operationId: get_reviews_reviewid
+      tags:
+      - Reviews
+      summary: Get review by ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/comments:
+    get:
+      operationId: get_reviews_reviewid_comments
+      tags:
+      - Reviews
+      summary: Get review comments.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/revisions:
+    get:
+      operationId: get_reviews_reviewid_revisions
+      tags:
+      - Reviews
+      summary: Get all revisions for a review by ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/revisions/{revisionid}:
+    get:
+      operationId: get_reviews_reviewid_revisions_revisionid
+      tags:
+      - Reviews
+      summary: Get the revision with the specified ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/revisions/{revisionid}/participants:
+    get:
+      operationId: get_reviews_reviewid_revisions_revisionid_participants
+      tags:
+      - Reviews
+      summary: Get participants for a specified revision.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/revisions/{revisionid}/progress:
+    get:
+      operationId: get_reviews_reviewid_revisions_revisionid_progress
+      tags:
+      - Reviews
+      summary: Get revision progress by revision id and review ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /reviews/{reviewid}/revisions/{revisionid}/revisionitems:
+    get:
+      operationId: get_reviews_reviewid_revisions_revisionid_revisionitems
+      tags:
+      - Reviews
+      summary: Get revision items by revision ID and review ID.
+      x-source: https://dev.jamasoftware.com/api
+      parameters:
+      - name: reviewid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /testplans:
+    post:
+      operationId: post_testplans
+      tags:
+      - Testplans
+      summary: Create a new Test Plan.
+      x-source: https://dev.jamasoftware.com/cookbook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTestplansRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTestplansResponse'
+      x-evidence:
+        kind: documentation
+  /testplans/{testplanid}:
+    get:
+      operationId: get_testplans_testplanid
+      tags:
+      - Testplans
+      summary: Retrieve test plan details including embedded attachment links.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTestplansTestplanidResponse'
+      x-evidence:
+        kind: documentation
+  /testplans/{testplanid}/testcycles:
+    get:
+      operationId: get_testplans_testplanid_testcycles
+      tags:
+      - Testplans
+      summary: Get the Test Cycles in a Test Plan.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTestplansTestplanidTestcyclesResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_testplans_testplanid_testcycles
+      tags:
+      - Testplans
+      summary: Create a new Test Cycle in a Test Plan.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTestplansTestplanidTestcyclesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTestplansTestplanidTestcyclesResponse'
+      x-evidence:
+        kind: documentation
+  /testplans/{testplanid}/testgroups:
+    get:
+      operationId: get_testplans_testplanid_testgroups
+      tags:
+      - Testplans
+      summary: Get the Test Groups in a Test Plan.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTestplansTestplanidTestgroupsResponse'
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_testplans_testplanid_testgroups
+      tags:
+      - Testplans
+      summary: Create a new Test Group in a Test Plan.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTestplansTestplanidTestgroupsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTestplansTestplanidTestgroupsResponse'
+      x-evidence:
+        kind: documentation
+  /testplans/{testplanid}/testgroups/{testgroupid}/testcases:
+    post:
+      operationId: post_testplans_testplanid_testgroups_testgroupid_testcases
+      tags:
+      - Testplans
+      summary: Add a Test Case to a Test Group.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testplanid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: testgroupid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostTestplansTestplanidTestgroupsTestgroupidTestcasesRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostTestplansTestplanidTestgroupsTestgroupidTestcasesRespons'
+      x-evidence:
+        kind: documentation
+  /testruns/{testrunid}:
+    get:
+      operationId: get_testruns_testrunid
+      tags:
+      - Testruns
+      summary: Retrieve test run details including embedded attachment links.
+      x-source: https://dev.jamasoftware.com/cookbook
+      parameters:
+      - name: testrunid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTestrunsTestrunidResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetAbstractitemsResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+        data:
+          type: array
+    GetAbstractitemsIdResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAbstractitemsIdVersionedrelationshipsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAbstractitemsIdVersionsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAbstractitemsIdVersionsVersionnumResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAbstractitemsIdVersionsVersionnumVersioneditemResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetActivitiesResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetActivitiesActivityidResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetActivitiesActivityidAffecteditemsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    PostActivitiesActivityidRestoreResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    GetAttachmentsAttachmentidCommentsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAttachmentsAttachmentidLockResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    PutAttachmentsAttachmentidLockRequest:
+      type: object
+      properties:
+        RequestLock:
+          type: string
+      required:
+      - RequestLock
+    PutAttachmentsAttachmentidLockResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    GetAttachmentsAttachmentidVersionsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAttachmentsAttachmentidVersionsVersionnumResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetAttachmentsAttachmentidVersionsVersionnumVersioneditemRes:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetBaselinesResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    GetBaselinesBaselineidResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    PutBaselinesBaselineidRequest:
+      type: object
+      properties:
+        RequestBaseline:
+          type: string
+      required:
+      - RequestBaseline
+    GetBaselinesBaselineidVersioneditemsItemidVersionedrelations:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+        links:
+          type: string
+    PostCommentsRequest:
+      type: object
+      properties:
+        RequestComment:
+          type: string
+      required:
+      - RequestComment
+    GetFiltersResponse:
+      type: object
+      properties:
+        data:
+          type: string
+    GetFiltersFilteridResponse:
+      type: object
+      properties:
+        data:
+          type: string
+    GetFiltersFilteridCountResponse:
+      type: object
+      properties:
+        data:
+          type: string
+    GetFiltersFilteridResultsResponse:
+      type: object
+      properties:
+        data:
+          type: string
+    PutItemIdRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+      required:
+      - fields
+    PutItemIdResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+    PostItemsResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PostItemsIdLinksResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PutItemsIdLinksLinkidRequest:
+      type: object
+      properties:
+        RequestLink:
+          type: string
+      required:
+      - RequestLink
+    PutItemsIdLinksLinkidResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PutItemsIdLocationRequest:
+      type: object
+      properties:
+        RequestMoveLocation:
+          type: string
+      required:
+      - RequestMoveLocation
+    PutItemsIdLocationResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PutItemsIdLockRequest:
+      type: object
+      properties:
+        RequestLock:
+          type: string
+      required:
+      - RequestLock
+    PutItemsIdLockResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PostItemsIdSynceditemsResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PostItemsIdTagsResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    GetItemtypesResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+    PostItemtypesRequest:
+      type: object
+      properties:
+        RequestItemType:
+          type: string
+      required:
+      - RequestItemType
+    PostItemtypesResponse:
+      type: object
+      properties:
+        data:
+          type: string
+        meta:
+          type: string
+    PutJamaRestV1ItemsItemidResponse:
+      type: object
+      properties:
+        ' status ':
+          type: string
+        ' timestamp ':
+          type: string
+          format: date-time
+        ' pageInfo ':
+          type: object
+          properties:
+            ' startIndex ':
+              type: integer
+            ' resultCount ':
+              type: integer
+            ' totalResults ':
+              type: integer
+    PostPicklistsRequest:
+      type: object
+      properties:
+        RequestPickList:
+          type: string
+      required:
+      - RequestPickList
+    PostPicklistsResponse:
+      type: object
+      properties:
+        meta:
+          type: string
+    PostProjectsProjectidAttachmentsRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+      required:
+      - fields
+    PostProjectsProjectidAttachmentsResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+    PutRestV1AttachmentAttachmentidFileResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+    PostRestV1CommentsRequest:
+      type: object
+      properties:
+        project:
+          type: integer
+          description: Project ID for the comment location
+        item:
+          type: integer
+          description: Item ID for the comment location
+        inReplyTo:
+          type: integer
+          description: Comment ID to reply to
+    PostRestV1CommentsResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status and location
+    PutRestV1ItemsIdLocationRequest:
+      type: object
+      properties:
+        parent:
+          type: object
+          description: Parent item or project location
+      required:
+      - parent
+    PutRestV1ItemsIdLocationResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata
+    GetRestV1ItemsItemidResponse:
+      type: object
+      properties:
+        ' 24114 ':
+          type: object
+          properties:
+            ' id ':
+              type: integer
+            ' projectKey ':
+              type: string
+            ' isFolder ':
+              type: boolean
+            ' createdDate ':
+              type: string
+              format: date-time
+            ' modifiedDate ':
+              type: string
+              format: date-time
+            ' createdBy ':
+              type: integer
+            ' modifiedBy ':
+              type: integer
+            ' fields ':
+              type: object
+              properties:
+                ' projectManager ':
+                  type: integer
+                ' user1 ':
+                  type: integer
+                ' projectKey ':
+                  type: string
+                ' statusId ':
+                  type: integer
+                ' text1 ':
+                  type: string
+                ' name ':
+                  type: string
+                ' description ':
+                  type: string
+                ' projectGroup ':
+                  type: integer
+            ' type ':
+              type: string
+    PatchRestV1TestrunsTestrunidRequest:
+      type: object
+      properties:
+        op:
+          type: string
+          description: Operation type (REPLACE)
+        path:
+          type: string
+          description: JSON Pointer path to the field
+        value:
+          type: string
+          description: 'Status value: PASSED, NOT_RUN, FAILED, INPROGRESS, or BLOCKED'
+      required:
+      - op
+      - path
+      - value
+    PatchRestV1TestrunsTestrunidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status and timestamp
+    PutRestV1TestrunsTestrunidRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+      required:
+      - fields
+    PutRestV1TestrunsTestrunidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+    GetRestV1AttachmentidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+        data:
+          type: object
+    PostTestplansRequest:
+      type: object
+      properties:
+        project:
+          type: integer
+          description: The API ID of the project where the Test Plan will be created
+        fields:
+          type: object
+          description: Object containing name and other Test Plan fields
+      required:
+      - project
+      - fields
+    PostTestplansResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status, timestamp, location, and id
+    GetTestplansTestplanidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+        data:
+          type: object
+    GetTestplansTestplanidTestcyclesResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with pagination info
+        data:
+          type: array
+          description: Array of Test Cycle objects
+    PostTestplansTestplanidTestcyclesRequest:
+      type: object
+      properties:
+        fields:
+          type: object
+          description: Object containing name, startDate, and endDate
+      required:
+      - fields
+    PostTestplansTestplanidTestcyclesResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status, timestamp, location, and id
+    GetTestplansTestplanidTestgroupsResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with pagination info
+        data:
+          type: array
+          description: Array of Test Group objects with id and name
+    PostTestplansTestplanidTestgroupsRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the Test Group
+      required:
+      - name
+    PostTestplansTestplanidTestgroupsResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status, timestamp, location, and id
+    PostTestplansTestplanidTestgroupsTestgroupidTestcasesRequest:
+      type: object
+      properties:
+        testCase:
+          type: integer
+          description: The API ID of the Test Case to add
+      required:
+      - testCase
+    PostTestplansTestplanidTestgroupsTestgroupidTestcasesRespons:
+      type: object
+      properties:
+        meta:
+          type: object
+          description: Response metadata with status, timestamp, location, and id
+    GetTestrunsTestrunidResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+        data:
+          type: object
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Abstractitems
+- name: Activities
+- name: Attachments
+- name: Baselines
+- name: Categories
+- name: Comments
+- name: Files
+- name: Filters
+- name: Item
+- name: Items
+- name: Itemtypes
+- name: Jama
+- name: Picklistoptions
+- name: Picklists
+- name: Projects
+- name: Relationships
+- name: Rest
+- name: Reviewmoderators
+- name: Reviews
+- name: Testplans
+- name: Testruns

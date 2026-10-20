@@ -1,0 +1,414 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/jama-software-openapi-generated.yml
+vocabulary:
+  name: Jama Software Domain Vocabulary
+  description: 'Terms declared by Jama Software''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-20'
+  terms:
+  - term: GetAbstractitemsResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsResponse
+  - term: GetAbstractitemsIdResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsIdResponse
+  - term: GetAbstractitemsIdVersionedrelationshipsResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsIdVersionedrelationshipsResponse
+  - term: GetAbstractitemsIdVersionsResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsIdVersionsResponse
+  - term: GetAbstractitemsIdVersionsVersionnumResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsIdVersionsVersionnumResponse
+  - term: GetAbstractitemsIdVersionsVersionnumVersioneditemResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAbstractitemsIdVersionsVersionnumVersioneditemResponse
+  - term: GetActivitiesResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetActivitiesResponse
+  - term: GetActivitiesActivityidResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetActivitiesActivityidResponse
+  - term: GetActivitiesActivityidAffecteditemsResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetActivitiesActivityidAffecteditemsResponse
+  - term: PostActivitiesActivityidRestoreResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostActivitiesActivityidRestoreResponse
+  - term: GetAttachmentsAttachmentidCommentsResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAttachmentsAttachmentidCommentsResponse
+  - term: GetAttachmentsAttachmentidLockResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAttachmentsAttachmentidLockResponse
+  - term: PutAttachmentsAttachmentidLockRequest
+    definition: 'Object declared by the contract with fields: RequestLock.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutAttachmentsAttachmentidLockRequest
+  - term: PutAttachmentsAttachmentidLockResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutAttachmentsAttachmentidLockResponse
+  - term: GetAttachmentsAttachmentidVersionsResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAttachmentsAttachmentidVersionsResponse
+  - term: GetAttachmentsAttachmentidVersionsVersionnumResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAttachmentsAttachmentidVersionsVersionnumResponse
+  - term: GetAttachmentsAttachmentidVersionsVersionnumVersioneditemRes
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetAttachmentsAttachmentidVersionsVersionnumVersioneditemRes
+  - term: GetBaselinesResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetBaselinesResponse
+  - term: GetBaselinesBaselineidResponse
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetBaselinesBaselineidResponse
+  - term: PutBaselinesBaselineidRequest
+    definition: 'Object declared by the contract with fields: RequestBaseline.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutBaselinesBaselineidRequest
+  - term: GetBaselinesBaselineidVersioneditemsItemidVersionedrelations
+    definition: 'Object declared by the contract with fields: data, meta, links.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetBaselinesBaselineidVersioneditemsItemidVersionedrelations
+  - term: PostCommentsRequest
+    definition: 'Object declared by the contract with fields: RequestComment.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostCommentsRequest
+  - term: GetFiltersResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetFiltersResponse
+  - term: GetFiltersFilteridResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetFiltersFilteridResponse
+  - term: GetFiltersFilteridCountResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetFiltersFilteridCountResponse
+  - term: GetFiltersFilteridResultsResponse
+    definition: 'Object declared by the contract with fields: data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetFiltersFilteridResultsResponse
+  - term: PutItemIdRequest
+    definition: 'Object declared by the contract with fields: fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemIdRequest
+  - term: PutItemIdResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemIdResponse
+  - term: PostItemsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemsResponse
+  - term: PostItemsIdLinksResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemsIdLinksResponse
+  - term: PutItemsIdLinksLinkidRequest
+    definition: 'Object declared by the contract with fields: RequestLink.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLinksLinkidRequest
+  - term: PutItemsIdLinksLinkidResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLinksLinkidResponse
+  - term: PutItemsIdLocationRequest
+    definition: 'Object declared by the contract with fields: RequestMoveLocation.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLocationRequest
+  - term: PutItemsIdLocationResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLocationResponse
+  - term: PutItemsIdLockRequest
+    definition: 'Object declared by the contract with fields: RequestLock.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLockRequest
+  - term: PutItemsIdLockResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutItemsIdLockResponse
+  - term: PostItemsIdSynceditemsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemsIdSynceditemsResponse
+  - term: PostItemsIdTagsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemsIdTagsResponse
+  - term: GetItemtypesResponse
+    definition: 'Object declared by the contract with fields: data, meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetItemtypesResponse
+  - term: PostItemtypesRequest
+    definition: 'Object declared by the contract with fields: RequestItemType.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemtypesRequest
+  - term: PostItemtypesResponse
+    definition: 'Object declared by the contract with fields: data, meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostItemtypesResponse
+  - term: PutJamaRestV1ItemsItemidResponse
+    definition: 'Object declared by the contract with fields:  status ,  timestamp ,  pageInfo .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutJamaRestV1ItemsItemidResponse
+  - term: PostPicklistsRequest
+    definition: 'Object declared by the contract with fields: RequestPickList.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostPicklistsRequest
+  - term: PostPicklistsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostPicklistsResponse
+  - term: PostProjectsProjectidAttachmentsRequest
+    definition: 'Object declared by the contract with fields: fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostProjectsProjectidAttachmentsRequest
+  - term: PostProjectsProjectidAttachmentsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostProjectsProjectidAttachmentsResponse
+  - term: PutRestV1AttachmentAttachmentidFileResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutRestV1AttachmentAttachmentidFileResponse
+  - term: PostRestV1CommentsRequest
+    definition: 'Object declared by the contract with fields: project, item, inReplyTo.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostRestV1CommentsRequest
+  - term: PostRestV1CommentsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostRestV1CommentsResponse
+  - term: PutRestV1ItemsIdLocationRequest
+    definition: 'Object declared by the contract with fields: parent.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutRestV1ItemsIdLocationRequest
+  - term: PutRestV1ItemsIdLocationResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutRestV1ItemsIdLocationResponse
+  - term: GetRestV1ItemsItemidResponse
+    definition: 'Object declared by the contract with fields:  24114 .'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetRestV1ItemsItemidResponse
+  - term: PatchRestV1TestrunsTestrunidRequest
+    definition: 'Object declared by the contract with fields: op, path, value.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PatchRestV1TestrunsTestrunidRequest
+  - term: PatchRestV1TestrunsTestrunidResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PatchRestV1TestrunsTestrunidResponse
+  - term: PutRestV1TestrunsTestrunidRequest
+    definition: 'Object declared by the contract with fields: fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutRestV1TestrunsTestrunidRequest
+  - term: PutRestV1TestrunsTestrunidResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PutRestV1TestrunsTestrunidResponse
+  - term: GetRestV1AttachmentidResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetRestV1AttachmentidResponse
+  - term: PostTestplansRequest
+    definition: 'Object declared by the contract with fields: project, fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansRequest
+  - term: PostTestplansResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansResponse
+  - term: GetTestplansTestplanidResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetTestplansTestplanidResponse
+  - term: GetTestplansTestplanidTestcyclesResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetTestplansTestplanidTestcyclesResponse
+  - term: PostTestplansTestplanidTestcyclesRequest
+    definition: 'Object declared by the contract with fields: fields.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestcyclesRequest
+  - term: PostTestplansTestplanidTestcyclesResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestcyclesResponse
+  - term: GetTestplansTestplanidTestgroupsResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetTestplansTestplanidTestgroupsResponse
+  - term: PostTestplansTestplanidTestgroupsRequest
+    definition: 'Object declared by the contract with fields: name.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestgroupsRequest
+  - term: PostTestplansTestplanidTestgroupsResponse
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestgroupsResponse
+  - term: PostTestplansTestplanidTestgroupsTestgroupidTestcasesRequest
+    definition: 'Object declared by the contract with fields: testCase.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestgroupsTestgroupidTestcasesRequest
+  - term: PostTestplansTestplanidTestgroupsTestgroupidTestcasesRespons
+    definition: 'Object declared by the contract with fields: meta.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/PostTestplansTestplanidTestgroupsTestgroupidTestcasesRespons
+  - term: GetTestrunsTestrunidResponse
+    definition: 'Object declared by the contract with fields: meta, data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml#/components/schemas/GetTestrunsTestrunidResponse
+  - term: Abstractitems
+    definition: 'Resource group in the contract; its operation GET /abstractitems: Search for items using abstract items endpoint with dynamic
+      filtering.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Activities
+    definition: 'Resource group in the contract; its operation GET /activities: Get all activities in the project with the specified ID'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Attachments
+    definition: 'Resource group in the contract; its operation GET /attachments/{attachmentid}/comments: Get all comments for the item with the
+      specified ID'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Baselines
+    definition: 'Resource group in the contract; its operation GET /baselines: Get all baselines in the project with the specified ID'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Categories
+    definition: 'Resource group in the contract; its operation GET /categories: Get all categories.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Comments
+    definition: 'Resource group in the contract; its operation GET /comments: Get all comments viewable by the current user'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Files
+    definition: 'Resource group in the contract; its operation GET /files: Download attachment file from the attachment with the specified Jama
+      URL'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Filters
+    definition: 'Resource group in the contract; its operation GET /filters: Get all filters viewable by the current user'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Item
+    definition: 'Resource group in the contract; its operation PUT /item/{id}: Update a Jama item''s rich text field with clickable attachment
+      links.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Items
+    definition: 'Resource group in the contract; its operation GET /items: Search for items'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
+  - term: Itemtypes
+    definition: 'Resource group in the contract; its operation GET /itemtypes: Get all item types'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/jama-software-openapi-generated.yml
